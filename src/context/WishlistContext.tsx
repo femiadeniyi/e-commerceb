@@ -15,7 +15,7 @@ interface WishlistContextType {
 
 const WishlistContext = createContext<WishlistContextType | undefined>(undefined);
 
-export const WishlistProvider: React.FC = ({ children }) => {
+export const WishlistProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [wishlist, setWishlist] = useState<Product[]>([]);
 
   // Updated addToWishlist function that checks for duplicates
